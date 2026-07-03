@@ -6,10 +6,10 @@ import { siteInfo } from "@/lib/data";
 import { useLanguage } from "@/components/LanguageContext";
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
-    <section className="relative overflow-hidden px-4 pb-24 pt-16 md:pt-24">
+    <section className="relative overflow-hidden px-4 pb-12 pt-10 md:pb-24 md:pt-24">
       {/* ambient field */}
       <div
         aria-hidden
@@ -30,17 +30,19 @@ export default function Hero() {
           {t("hero.eyebrow")}
         </motion.p>
 
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr] md:items-end">
+        <div className="grid gap-6 md:gap-10 md:grid-cols-[1.4fr_1fr] md:items-end">
           <motion.h1
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.05 }}
-            className="font-display text-[13vw] leading-[0.95] tracking-tight md:text-[5.2vw]"
+            className="font-display text-[10vw] sm:text-5xl leading-[0.95] tracking-tight md:text-[5.2vw]"
           >
             {t("hero.title1")}
             <br />
             {t("hero.titleAnd")}{" "}
-            <span className="italic text-[var(--accent)]">og</span>
+            <span className="italic text-[var(--accent)]">
+              {language === "no" ? "og" : "and"}
+            </span>
             <br />
             {t("hero.title2")}
           </motion.h1>
@@ -61,11 +63,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.25 }}
-          className="glass mt-14 grid gap-6 rounded-[28px] p-6 md:grid-cols-[1fr_auto] md:items-center md:p-8"
+          className="glass mt-8 md:mt-14 grid gap-6 rounded-[24px] md:rounded-[28px] p-5 md:p-8 md:grid-cols-[1fr_auto] md:items-center"
         >
           <div>
-            <p className="font-display text-xl italic md:text-2xl">
-              &ldquo;{t("hero.quote")}&rdquo;
+            <p className="font-display text-lg md:text-2xl italic">
+              {t("hero.quote")}
             </p>
             <p className="mt-2 text-sm text-[var(--ink-soft)]">
               {t("hero.quoteSub")}

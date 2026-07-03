@@ -74,16 +74,18 @@ export default function Navbar() {
               {t("nav.studies")}
             </button>
             {studierOpen && (
-              <div className="glass absolute left-1/2 top-full mt-3 w-72 -translate-x-1/2 rounded-2xl p-2 shadow-lg">
-                {programs.map((p) => (
-                  <Link
-                    key={p.slug}
-                    href={`/studier/${p.slug}`}
-                    className="block rounded-xl px-4 py-3 text-sm text-[var(--ink-soft)] transition hover:bg-white/60 hover:text-[var(--ink)]"
-                  >
-                    {getProgramName(p.slug, p.name)}
-                  </Link>
-                ))}
+              <div className="absolute left-1/2 top-full w-72 -translate-x-1/2 pt-3 z-50">
+                <div className="glass rounded-2xl p-2 shadow-lg">
+                  {programs.map((p) => (
+                    <Link
+                      key={p.slug}
+                      href={`/studier/${p.slug}`}
+                      className="block rounded-xl px-4 py-3 text-sm text-[var(--ink-soft)] transition hover:bg-white/60 hover:text-[var(--ink)]"
+                    >
+                      {getProgramName(p.slug, p.name)}
+                    </Link>
+                  ))}
+                </div>
               </div>
             )}
           </div>

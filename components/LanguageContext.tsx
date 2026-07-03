@@ -26,7 +26,7 @@ const translations: Record<string, { no: string; en: string }> = {
   // Hero
   "hero.eyebrow": { no: "Norges Idretts- og Helseinstitutt", en: "Norwegian Sports and Health Institute" },
   "hero.title1": { no: "Spisskompetanse", en: "Expertise" },
-  "hero.titleAnd": { no: "innen helse og", en: "in health and" },
+  "hero.titleAnd": { no: "innen helse", en: "in health" },
   "hero.title2": { no: "idrettsmedisin", en: "sports medicine" },
   "hero.description": {
     no: "For deg som ønsker en bredere og dypere innsikt på tvers av fagområder. Videreutdanninger basert på innovasjon, forskning og klinisk praksis.",
