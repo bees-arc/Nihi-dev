@@ -2,9 +2,10 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Check, Play, BookOpen, CreditCard, ChevronDown, Phone, Mail } from "lucide-react";
+import { ArrowUpRight, Play, BookOpen, CreditCard, ChevronDown, Phone, Mail } from "lucide-react";
 import { siteInfo } from "@/lib/data";
 import { useLanguage } from "@/components/LanguageContext";
+import Image from "next/image";
 
 // Video Card component for inline premium play experience
 function VideoCard({ src, poster, title }: { src: string; poster: string; title: string }) {
@@ -22,9 +23,11 @@ function VideoCard({ src, poster, title }: { src: string; poster: string; title:
           />
         ) : (
           <div className="relative h-full w-full cursor-pointer" onClick={() => setPlaying(true)}>
-            <img
+            <Image
               src={poster}
               alt={title}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
             />
             {/* Play overlay */}
@@ -376,7 +379,7 @@ function AccordionItem({
 }
 
 export default function MuskelterapeutPage() {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   // Program details page localization helper
@@ -615,9 +618,11 @@ export default function MuskelterapeutPage() {
                   className="flex flex-col overflow-hidden rounded-[20px] border border-black/5 bg-white shadow-sm transition hover:shadow-md"
                 >
                   <div className="aspect-[4/3] w-full bg-stone-100 overflow-hidden relative">
-                    <img
+                    <Image
                       src={m.image}
                       alt={info.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { programs, siteInfo } from "@/lib/data";
 import { ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/components/LanguageContext";
@@ -23,7 +24,7 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
           <div>
             <Link href="/" className="inline-block mb-3">
-              <img src="/logo.png" alt="NIHI Logo" className="h-9 w-auto object-contain" />
+              <Image src="/logo.png" alt="NIHI Logo" width={108} height={36} className="h-9 w-auto object-contain" />
             </Link>
             <p className="mt-1 max-w-xs text-sm text-white/60">
               {t("footer.desc")}
