@@ -1,5 +1,5 @@
 import { programs } from "@/lib/data";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import ProgramDetailClient from "@/components/ProgramDetailClient";
 
 export function generateStaticParams() {
@@ -12,6 +12,9 @@ export default async function ProgramPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  if (slug === "sertifisert-idretts-og-muskelterapeut") {
+    redirect("/sertifisertidretts-ogmuskelterapeut");
+  }
   const program = programs.find((p) => p.slug === slug);
   if (!program) return notFound();
 

@@ -11,8 +11,9 @@
   --ink-soft: #46453f;
   --ink-faint: #8a897f;
   --line: #d8d7d0;
-  --accent: #4b5d56;
-  --accent-soft: #e4e8e5;
+  --accent: #0f9f90;
+  --accent-soft: #e0f7f5;
+  --accent-bright: #4bfff0;
 
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-body: "Inter", -apple-system, "Segoe UI", sans-serif;

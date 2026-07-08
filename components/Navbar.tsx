@@ -60,8 +60,8 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 px-4 pt-4">
       <div className="glass mx-auto flex max-w-6xl items-center justify-between rounded-full px-5 py-3 shadow-sm">
-        <Link href="/" className="font-display text-lg tracking-tight">
-          NIHI
+        <Link href="/" className="flex items-center bg-[var(--ink)] px-5 py-2 rounded-full hover:opacity-90 transition">
+          <img src="/logo.png" alt="NIHI Logo" className="h-10 w-auto object-contain" />
         </Link>
 
         <nav className="hidden items-center gap-7 md:flex">
@@ -79,7 +79,7 @@ export default function Navbar() {
                   {programs.map((p) => (
                     <Link
                       key={p.slug}
-                      href={`/studier/${p.slug}`}
+                      href={p.slug === "sertifisert-idretts-og-muskelterapeut" ? "/sertifisertidretts-ogmuskelterapeut" : `/studier/${p.slug}`}
                       className="block rounded-xl px-4 py-3 text-sm text-[var(--ink-soft)] transition hover:bg-white/60 hover:text-[var(--ink)]"
                     >
                       {getProgramName(p.slug, p.name)}
@@ -155,7 +155,7 @@ export default function Navbar() {
           <a
             href={siteInfo.calendly}
             target="_blank"
-            className="flex items-center gap-1 rounded-full bg-[var(--ink)] px-4 py-2 text-sm text-[var(--bg)] transition hover:opacity-85"
+            className="flex items-center gap-1 rounded-full bg-[var(--ink)] px-4 py-2 text-sm text-[var(--bg)] transition hover:bg-[var(--accent)] hover:text-white"
           >
             {t("nav.bookAdvising")} <ArrowUpRight size={14} />
           </a>
@@ -172,7 +172,7 @@ export default function Navbar() {
           {programs.map((p) => (
             <Link
               key={p.slug}
-              href={`/studier/${p.slug}`}
+              href={p.slug === "sertifisert-idretts-og-muskelterapeut" ? "/sertifisertidretts-ogmuskelterapeut" : `/studier/${p.slug}`}
               className="block py-2 text-sm"
               onClick={() => setOpen(false)}
             >
@@ -226,7 +226,7 @@ export default function Navbar() {
           <a
             href={siteInfo.calendly}
             target="_blank"
-            className="flex w-fit items-center gap-1 rounded-full bg-[var(--ink)] px-4 py-2 text-sm text-[var(--bg)]"
+            className="flex w-fit items-center gap-1 rounded-full bg-[var(--ink)] px-4 py-2 text-sm text-[var(--bg)] transition hover:bg-[var(--accent)] hover:text-white"
           >
             {t("nav.bookAdvising")} <ArrowUpRight size={14} />
           </a>

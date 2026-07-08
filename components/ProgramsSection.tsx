@@ -27,7 +27,7 @@ export default function ProgramsSection() {
           {programs.map((p, i) => (
             <Link
               key={p.slug}
-              href={`/studier/${p.slug}`}
+              href={p.slug === "sertifisert-idretts-og-muskelterapeut" ? "/sertifisertidretts-ogmuskelterapeut" : `/studier/${p.slug}`}
               className="group flex flex-col gap-3 border-b border-[var(--line)] py-8 transition md:flex-row md:items-center md:gap-8"
             >
               <span className="font-mono text-sm text-[var(--ink-faint)] md:w-12">

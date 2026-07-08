@@ -22,8 +22,10 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-12 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
           <div>
-            <p className="font-display text-2xl">NIHI</p>
-            <p className="mt-3 max-w-xs text-sm text-white/60">
+            <Link href="/" className="inline-block mb-3">
+              <img src="/logo.png" alt="NIHI Logo" className="h-9 w-auto object-contain" />
+            </Link>
+            <p className="mt-1 max-w-xs text-sm text-white/60">
               {t("footer.desc")}
             </p>
             <a
