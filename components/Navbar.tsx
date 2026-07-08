@@ -59,7 +59,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 px-4 pt-4">
+    <header className="absolute top-0 left-0 right-0 z-50 px-4 pt-4">
       <div className="glass mx-auto flex max-w-6xl items-center justify-between rounded-full px-5 py-3 shadow-sm">
         <Link href="/" className="flex items-center bg-[var(--ink)] px-5 py-2 rounded-full hover:opacity-90 transition">
           <Image src="/logo.png" alt="NIHI Logo" width={120} height={40} className="h-10 w-auto object-contain" priority />
